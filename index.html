@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#3b3a3b">
+  <meta name="description" content="dbt.yu — маленький архив историй. Работы, альтернативные вселенные, зарисовки и письма в одном месте.">
+  <title>dbt.yu — архив историй</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="channel.css">
+  <script defer src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script defer src="data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <button class="skip-link" data-action="skip">Перейти к содержимому</button>
+  <div class="page-grain" aria-hidden="true"></div>
+  <div class="channel-backdrop" aria-hidden="true"><span class="backdrop-photo backdrop-a"></span><span class="backdrop-photo backdrop-b"></span><span class="backdrop-photo backdrop-c"></span><span class="backdrop-photo backdrop-d"></span><span class="backdrop-type">PRETTY</span><span class="backdrop-type backdrop-lower">LITTLE</span><span class="backdrop-note">stories, love &amp; chaos</span></div>
+  <div class="frame">
+    <header class="topbar">
+      <a class="wordmark" href="#/" aria-label="dbt.yu — на главную"><span class="channel-emoji emoji-heart" aria-hidden="true"></span><span class="brand-name">dbt.yu</span><small>/ archive</small></a>
+      <span class="topbar-note">a place for all the little worlds</span>
+      <div class="header-actions">
+        <span id="demoBadge" class="demo-badge" hidden>демоверсия</span>
+        <button class="icon-button" data-action="search" aria-label="Поиск по архиву"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg></button>
+        <button class="icon-button" data-action="about" aria-label="Об архиве"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 10.5v6m0-10v1"/></svg></button>
+      </div>
+    </header>
+    <div class="app-layout">
+      <aside class="sidebar" aria-label="Навигация по архиву">
+        <div class="sidebar-caption">INDEX <span>001—005</span></div>
+        <nav id="sideNav"></nav>
+        <div class="sidebar-bottom">
+          <a class="side-link" data-nav="saved" href="#/saved"><span class="nav-symbol">♡</span><span>избранное</span><span id="savedCount" class="nav-count">0</span></a>
+          <div class="side-note"><span aria-hidden="true">⌞</span> истории из другой жизни.<br>и немного из этой.</div>
+          <a id="channelLink" class="channel-link" hidden target="_blank" rel="noopener noreferrer">вернуться в канал <span>↗</span></a>
+        </div>
+      </aside>
+      <main id="app" tabindex="-1"></main>
+    </div>
+    <footer><span>© <span id="footerTitle">dbt.yu</span> <i>♡</i> made of stories</span><span>somewhere between the lines <span class="footer-version">/ vol. 03</span></span></footer>
+  </div>
+  <nav class="mobile-nav" aria-label="Основная навигация">
+    <a data-nav="home" href="#/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3.5 10 8.5-7 8.5 7v10H15v-6H9v6H3.5Z"/></svg><span>главная</span></a>
+    <a data-nav="catalog" href="#/catalog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="4" width="7" height="16" rx="1"/><rect x="13.5" y="4" width="7" height="16" rx="1"/><path d="M6 8h2m8 0h2"/></svg><span>каталог</span></a>
+    <a data-nav="saved" href="#/saved"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 3.5h14V21l-7-4-7 4Z"/></svg><span>избранное</span></a>
+  </nav>
+  <dialog id="aboutDialog" aria-labelledby="aboutTitle">
+    <div class="dialog-top"><span class="eyebrow">a note from the archive</span><button class="icon-button" data-action="close-about" aria-label="Закрыть">×</button></div>
+    <span class="dialog-mark channel-emoji emoji-cat" aria-hidden="true"></span><h2 id="aboutTitle">Всё начинается<br>с маленькой истории.</h2>
+    <p>Это dbt.yu — место для работ, альтернативных вселенных, зарисовок и писем. Выбирай рубрику, открывай части по порядку и сохраняй то, к чему хочется вернуться.</p>
+    <p id="aboutDemo" class="demo-explanation" hidden>Сейчас в архиве примеры из первой версии. Названия и описания демонстрационные; ссылки на публикации ещё не добавлены.</p>
+    <p class="privacy-note">Избранное и отметки о прочитанном сохраняются в этом браузере. Между устройствами они не переносятся.</p>
+    <button class="button button-red" data-action="close-about">в архив <span>↗</span></button>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <noscript><p class="noscript">Для работы архива включи JavaScript в браузере.</p></noscript>
+</body>
+</html>
